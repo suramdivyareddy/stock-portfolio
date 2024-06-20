@@ -1,38 +1,122 @@
+/* Main app container */
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container for stocks sections */
+.stocks-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styles for all sections */
+.all-stocks, .selected-stocks, .portfolio-diversity {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 30%;
+  height: 500px; /* Fixed height to enable scrolling */
+  overflow-y: hidden; /* Hide overflow for the entire section */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Scrollable area for stock lists */
+.all-stocks .stocks-list, .selected-stocks .stocks-list {
+  overflow-y: auto; /* Enable vertical scrolling for the list */
+  flex-grow: 1;
+}
+
+/* Flex column for stock list items */
+.stocks-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles for individual stock items */
+.stock-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+  position: relative; /* For positioning the remove button */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for stock items */
+.stock-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Styles for the remove button */
+.remove-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
   color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Dialog for already selected message */
+.dialog {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 1000;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Search bar styling */
+.search-bar {
+  margin-bottom: 20px;
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Typography improvements */
+h1 {
+  color: #343a40;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #495057;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 5px 0;
+  color: #6c757d;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
 }

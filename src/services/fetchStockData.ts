@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_KEY = 'cpnb1mpr01qtggbb1hm0cpnb1mpr01qtggbb1hmg'; // Replace with your FinnHub API key
+const API_KEY = ''; // Replace with your FinnHub API key
 
 const fetchStockData = async () => {
   try {
